@@ -24,7 +24,11 @@ public class StudentRepository {
     }
 
     public Student getStudent(int id){
-       return db.get(id);
+        if(db.containsKey(id)){
+            return db.get(id);
+        }else{
+            return null;
+        }
     }
 
     public String deleteStudent(int id){
@@ -53,5 +57,4 @@ public class StudentRepository {
         }
         return null;
     }
-
 }
